@@ -171,7 +171,7 @@
 &kp Q           &lt MOUSE W     &kp E           &kp R           &kp T                                       &kp Y       &kp U           &lt SCROLL I    &kp O           &kp P
 &hml RSHFT A    &hml LCTRL S    &hml LALT D     &hml LGUI F     &lt NAV G                                   &kp H       &hmr RGUI J     &hmr RALT K     &hmr RCTRL L    &hmr LSHFT SEMI
 &kp Z           &kp X           &kp C           &kp V           &kp B                                       &kp N       &kp M           &kp COMMA       &kp DOT         &kp MINUS
-&mt LCTRL ESC   &kp LGUI        &mt LALT GRAVE  &kp INS         &lt SYMBOL SPACE &lt NUMPAD ENTER &lt ALT BSPC &lt NUMPAD TAB             &lt SYMBOL RBKT &lt ALT BSLH    &mt RSHFT FSLH
+&mt LCTRL ESC   &kp LGUI        &mt LALT GRAVE  &kp INS         &lt SYMBOL SPACE &lt NUMPAD ENTER &lt ALT BSPC &kp TAB                    &kp RBKT        &kp BSLH        &mt RSHFT FSLH
             >;
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
