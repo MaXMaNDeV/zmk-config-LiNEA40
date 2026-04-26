@@ -11,13 +11,13 @@
 
 #define DEFAULT   0
 #define MOUSE_TOG 1
-#define SCROLL    2
+#define MOUSE     2
 #define SYMBOL    3
 #define ALT       4
 #define NUMPAD    5
 #define BT        6
 #define NAV       7
-#define MOUSE     8
+#define SCROLL    8
 #define SNIPE     9
 
 &mmv {
@@ -187,14 +187,15 @@
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
         };
 
-        /* Layer 2: Scroll (trackball Y -> scroll, via I-hold or K-hold in mouse) */
-        scroll_layer {
+        /* Layer 2: Mouse (W-hold) */
+        mouse_layer {
             bindings = <
-&trans      &trans      &trans      &trans      &trans                              &trans      &trans              &trans  &trans              &trans
-&trans      &trans      &trans      &trans      &trans                              &trans      &kp LG(LS(LBKT))    &trans  &kp LG(LS(RBKT))    &trans
-&trans      &trans      &trans      &trans      &trans                              &trans      &trans              &trans  &trans              &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans                          &trans  &trans              &trans
+&trans      &trans      &trans      &trans      &trans                              &trans      &kp LG(LBKT) &trans      &kp LG(RBKT) &trans
+&mo SNIPE   &trans      &trans      &trans      &trans                              &trans      &mkp MB1     &mo SCROLL  &mkp MB2     &trans
+&mo SCROLL  &trans      &trans      &trans      &trans                              &trans      &kp PG_UP    &trans      &kp UP       &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans                   &kp LEFT    &kp DOWN     &kp RIGHT
             >;
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
         };
 
         /* Layer 3: Symbol (Corchibi physical mapping) */
@@ -247,15 +248,14 @@
             >;
         };
 
-        /* Layer 8: Mouse (SPACE-hold, identical to MOUSE_TOG) */
-        mouse_layer {
+        /* Layer 8: Scroll (trackball Y -> scroll, via I-hold or K-hold in mouse) */
+        scroll_layer {
             bindings = <
-&trans      &trans      &trans      &trans      &trans                              &trans      &kp LG(LBKT) &trans      &kp LG(RBKT) &trans
-&mo SNIPE   &trans      &trans      &trans      &trans                              &trans      &mkp MB1     &mo SCROLL  &mkp MB2     &trans
-&mo SCROLL  &trans      &trans      &trans      &trans                              &trans      &kp PG_UP    &trans      &kp UP       &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans                   &kp LEFT    &kp DOWN     &kp RIGHT
+&trans      &trans      &trans      &trans      &trans                              &trans      &trans              &trans  &trans              &trans
+&trans      &trans      &trans      &trans      &trans                              &trans      &kp LG(LS(LBKT))    &trans  &kp LG(LS(RBKT))    &trans
+&trans      &trans      &trans      &trans      &trans                              &trans      &trans              &trans  &trans              &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans                          &trans  &trans              &trans
             >;
-            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
         };
 
         /* Layer 9: Snipe (slow cursor, J=MB1 / L=MB2) */
